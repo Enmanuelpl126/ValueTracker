@@ -1,2 +1,7 @@
 *.jsx linguist-language=JSX
+*.js linguist-language=JSX
+vite.config.js linguist-language=JavaScript
+tailwind.config.js linguist-language=JavaScript
+postcss.config.js linguist-language=JavaScript
+eslint.config.js linguist-language=JavaScript
 src/ linguist-detectable=true
