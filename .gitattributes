@@ -1,12 +1,16 @@
+# Force primary languages for source files
 *.jsx linguist-language=JSX
-*.jsx linguist-detectable=true
+*.js linguist-language=JavaScript
+src/**/*.jsx linguist-language=JSX
+src/**/*.js linguist-language=JavaScript
+*.css linguist-language=CSS
+*.html linguist-language=HTML
 
-# Exclude CSS and HTML files from language statistics
-*.css linguist-vendored
-*.html linguist-vendored
-
-# Config files - exclude from language statistics
+# Mark tooling/config files as vendored (excluded from stats)
 vite.config.js linguist-vendored
 tailwind.config.js linguist-vendored
 postcss.config.js linguist-vendored
 eslint.config.js linguist-vendored
+
+# Keep hidden windsurf plans ignored by git but do not affect language stats
+.windsurf/** linguist-vendored
