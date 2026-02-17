@@ -1,7 +1,8 @@
 *.jsx linguist-language=JSX
-*.js linguist-language=JSX
-vite.config.js linguist-language=JavaScript
-tailwind.config.js linguist-language=JavaScript
-postcss.config.js linguist-language=JavaScript
-eslint.config.js linguist-language=JavaScript
-src/ linguist-detectable=true
+*.jsx linguist-detectable=true
+
+# Config files - exclude from language statistics
+vite.config.js linguist-vendored
+tailwind.config.js linguist-vendored
+postcss.config.js linguist-vendored
+eslint.config.js linguist-vendored
