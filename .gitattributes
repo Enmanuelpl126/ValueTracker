@@ -1,8 +1,10 @@
 # Force primary languages for source files
-*.jsx linguist-language=JSX
+# Treat JSX files as JavaScript so GitHub shows JavaScript (React code)
+*.jsx linguist-language=JavaScript
 *.js linguist-language=JavaScript
-src/**/*.jsx linguist-language=JSX
+src/**/*.jsx linguist-language=JavaScript
 src/**/*.js linguist-language=JavaScript
+# Keep CSS and HTML as their respective languages
 *.css linguist-language=CSS
 *.html linguist-language=HTML
 
