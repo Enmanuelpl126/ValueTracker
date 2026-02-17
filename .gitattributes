@@ -1,6 +1,10 @@
 *.jsx linguist-language=JSX
 *.jsx linguist-detectable=true
 
+# Exclude CSS and HTML files from language statistics
+*.css linguist-vendored
+*.html linguist-vendored
+
 # Config files - exclude from language statistics
 vite.config.js linguist-vendored
 tailwind.config.js linguist-vendored
