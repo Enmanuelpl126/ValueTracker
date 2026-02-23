@@ -42,6 +42,19 @@ function App() {
     setPeriod(ex.period);
   };
 
+  const handleChangePeriod = (newPeriod) => {
+    if (newPeriod === period) return;
+    const u = parseFloat(usage) || 0;
+    if (u > 0) {
+      if (newPeriod === "yearly" && period === "monthly") {
+        setUsage((Math.round(u * 12)).toString());
+      } else if (newPeriod === "monthly" && period === "yearly") {
+        setUsage((Math.round(u / 12)).toString());
+      }
+    }
+    setPeriod(newPeriod);
+  };
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col items-center py-12 px-4 font-sans text-slate-900">
       <motion.div 
@@ -68,13 +81,13 @@ function App() {
               <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1 mb-2 block">¿Cuánto lo usarás?</label>
               <div className="flex gap-2 p-1.5 bg-slate-100 rounded-2xl mb-4">
                 <button
-                  onClick={() => setPeriod("monthly")}
+                  onClick={() => handleChangePeriod("monthly")}
                   className={`flex-1 py-2.5 text-xs font-black rounded-xl transition-all ${period === "monthly" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-500 hover:text-slate-600"}`}
                 >
                   AL MES
                 </button>
                 <button
-                  onClick={() => setPeriod("yearly")}
+                  onClick={() => handleChangePeriod("yearly")}
                   className={`flex-1 py-2.5 text-xs font-black rounded-xl transition-all ${period === "yearly" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-500 hover:text-slate-600"}`}
                 >
                   AL AÑO
